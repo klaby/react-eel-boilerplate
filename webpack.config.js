@@ -26,13 +26,14 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: './dist/index.html',
+    contentBase: './dist',
     historyApiFallback: true,
     compress: true,
     hot: true,
     host: '0.0.0.0',
     port: 4000,
     publicPath: '/',
+    writeToDisk: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
