@@ -2,7 +2,7 @@ export {}
 
 declare global {
   interface Window {
-    ell: {
+    eel: {
       hello: () => void
     }
   }

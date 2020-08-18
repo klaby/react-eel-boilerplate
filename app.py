@@ -1,5 +1,6 @@
 import eel
 import sys
+import random
 
 
 @eel.expose
@@ -9,9 +10,12 @@ def hello():
 
 if __name__ == "__main__":
     if sys.argv[1] == "--develop":
-
-        eel.init("dist")
-        eel.start({"host": "0.0.0.0", "port": 4000})
+        directory = "dist"
+        page = {"port": 4000}
     else:
-        eel.init("dist")
-        eel.start("index.html")
+        directory = "dist"
+        page = "index.html"
+
+    eel_kwargs = dict(host="localhost", port=8080, size=(1280, 800))
+
+    eel.start(page, mode="chrome", **eel_kwargs)
